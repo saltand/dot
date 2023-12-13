@@ -1,0 +1,9 @@
+{
+	"template": {
+		"prefix": "temp",
+		"body": [
+      "<template ${0:#default}></template>",
+		],
+		"description": "template tag"
+	}
+}
