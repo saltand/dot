@@ -2,8 +2,8 @@
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "[prisma]": {
-    "editor.defaultFormatter": "Prisma.prisma"
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
   },
   "[svg]": {
     "editor.defaultFormatter": "jock.svg"
@@ -11,12 +11,34 @@
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "[vue]": {
+    "editor.defaultFormatter": "Vue.volar"
+  },
   "bookmarks.useWorkaroundForFormatters": true,
-  "cSpell.userWords": ["axios", "Btns", "composables", "daisyui", "echarts", "gsap", "Konva", "maska", "maxage", "minio", "nuxt", "nuxtjs", "PIXI", "tailwindcss", "tdrs", "unocss", "vnode"],
+  "cSpell.userWords": [
+    "axios",
+    "Btns",
+    "composables",
+    "daisyui",
+    "echarts",
+    "gsap",
+    "Konva",
+    "maska",
+    "maxage",
+    "minio",
+    "nprogress",
+    "nuxt",
+    "nuxtjs",
+    "PIXI",
+    "tailwindcss",
+    "tdrs",
+    "unocss",
+    "vnode"
+  ],
+  "common-intellisense.showSlots": false,
   "css.lint.duplicateProperties": "warning",
   "css.lint.emptyRules": "ignore",
   "diffEditor.codeLens": true,
-  "diffEditor.ignoreTrimWhitespace": false,
   "editor.acceptSuggestionOnCommitCharacter": false,
   "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
   "editor.colorDecorators": false,
@@ -29,11 +51,14 @@
   "editor.guides.bracketPairs": "active",
   "editor.lineHeight": 1.4,
   "editor.minimap.enabled": false,
+  "editor.minimap.renderCharacters": false,
+  "editor.minimap.showSlider": "always",
   "editor.quickSuggestions": {
     "comments": "on",
     "strings": "on"
   },
   "editor.renderWhitespace": "trailing",
+  "editor.stickyScroll.scrollWithEditor": false,
   "editor.suggest.preview": true,
   "editor.suggest.shareSuggestSelections": true,
   "editor.suggest.snippetsPreventQuickSuggestions": false,
@@ -58,14 +83,18 @@
       }
     ]
   },
-  "editor.wordBasedSuggestionsMode": "allDocuments",
   "emmet.showExpandedAbbreviation": "always",
-  "errorLens.enabledDiagnosticLevels": ["error", "warning"],
   "eslint.codeAction.showDocumentation": {
     "enable": true
   },
   "eslint.quiet": true,
-  "eslint.validate": ["javascript", "typescript", "javascriptreact", "typescriptreact", "vue"],
+  "eslint.validate": [
+    "javascript",
+    "typescript",
+    "javascriptreact",
+    "typescriptreact",
+    "vue"
+  ],
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
   "explorer.fileNesting.expand": false,
@@ -75,31 +104,26 @@
     "vscodevim.vim": 1
   },
   "extensions.ignoreRecommendations": true,
-  "fileJump.aliasObj": {
-    "@": "/src",
-    "@components": "/src/components"
-  },
   "files.autoSave": "onFocusChange",
-  "fnMap.extData": {
-    ".vue": {
-      "filters": [
-        {
-          "level": 0,
-          "name": "template"
-        }
-      ],
-      "level": 2
-    }
-  },
-  "fnMap.registrationCode": "ljYwQ7KlNWHfGDbJeJV9G+O08BUGGEiG4ZzFBZ5CWYpb4F1qBlbc+q2Tc6/edniGS9xa3C7cDa2BovXXdhGUyMBDHuN/FQn1OGgO2z1kJ7T3T8HXU4vAeaKkB2rD0yGAPAVZ4isocDj2uXeasC+MepTcKz+w2QZAx68ijg0kHE8/FNV+Ns1FG1kL9t1D8kTUUyx1hwVd+cQXDpG6/Ls5sQ5bx7UXXyHboJivIAMve63IeSXSA1nHWLUTguXQkIk2eDQWSdzmap6C7hQIAEs4KhPxV12YYo/fsV5+jOsnQcQHW24O7iYh88bGei0t0Rq9BPrQM1IvxcGgX3FrzDq5Lg==",
   "git.autofetch": true,
   "git.confirmSync": false,
   "git.openRepositoryInParentFolders": "never",
+  "github.copilot.chat.localeOverride": "zh-CN",
+  "github.copilot.enable": {
+    "*": true,
+    "markdown": false,
+    "plaintext": false,
+    "scminput": false
+  },
   "gitlens.codeLens.authors.enabled": false,
   "gitlens.codeLens.enabled": false,
+  "html.autoClosingTags": false,
   "javascript.updateImportsOnFileMove.enabled": "always",
   "js/ts.implicitProjectConfig.checkJs": true,
   "liveServer.settings.donotShowInfoMsg": true,
+  "path-autocomplete.pathMappings": {
+    "@": "${folder}/src/"
+  },
   "prettier.arrowParens": "avoid",
   "prettier.bracketSameLine": true,
   "prettier.printWidth": 200,
@@ -149,7 +173,8 @@
   "terminal.integrated.cursorStyle": "line",
   "terminal.integrated.env.osx": {},
   "terminal.integrated.env.windows": {},
-  "terminal.integrated.fontFamily": "'Maple Mono', 'Maple Mono NF', 'JetBrainsMono Nerd Font', 'JetBrainsMono NF', 'LXGW WenKai'",
+  "terminal.integrated.fontFamily": "'Maple Mono', 'Maple Mono NF', 'Maple Mono SC NF Regular', 'JetBrainsMono Nerd Font', 'JetBrainsMono NF', 'LXGW WenKai'",
+  "typeChallenges.workspaceFolder": "C:\\Users\\yhsun16\\.typeChallenges",
   "vim.camelCaseMotion.enable": true,
   "vim.easymotion": true,
   "vim.foldfix": true,
@@ -162,411 +187,816 @@
   "vim.leader": "<space>",
   "vim.normalModeKeyBindingsNonRecursive": [
     {
-      "before": ["<C-f>"],
-      "commands": ["actions.find"],
+      "before": [
+        "<C-f>"
+      ],
+      "commands": [
+        "actions.find"
+      ],
       "silent": true
     },
     {
-      "before": ["<C-b>"],
-      "commands": ["workbench.action.toggleSidebarVisibility"],
+      "before": [
+        "<C-b>"
+      ],
+      "commands": [
+        "workbench.action.toggleSidebarVisibility"
+      ],
       "silent": true
     },
     {
-      "before": ["<C-p>"],
-      "commands": ["workbench.action.quickOpen"],
+      "before": [
+        "<C-p>"
+      ],
+      "commands": [
+        "workbench.action.quickOpen"
+      ],
       "silent": true
     },
     {
-      "before": ["+"],
-      "commands": ["editor.action.moveLinesUpAction"],
+      "before": [
+        "+"
+      ],
+      "commands": [
+        "editor.action.moveLinesUpAction"
+      ],
       "silent": true
     },
     {
-      "before": ["_"],
-      "commands": ["editor.action.moveLinesDownAction"],
+      "before": [
+        "_"
+      ],
+      "commands": [
+        "editor.action.moveLinesDownAction"
+      ],
       "silent": false
     },
     {
-      "before": ["<C-b>"],
-      "commands": ["workbench.action.toggleSidebarVisibility"],
+      "before": [
+        "<C-b>"
+      ],
+      "commands": [
+        "workbench.action.toggleSidebarVisibility"
+      ],
       "silent": true
     },
     {
-      "before": ["-"],
-      "commands": ["workbench.action.navigateBack"],
+      "before": [
+        "-"
+      ],
+      "commands": [
+        "workbench.action.navigateBack"
+      ],
       "silent": true
     },
     {
-      "before": ["="],
-      "commands": ["workbench.action.navigateForward"],
+      "before": [
+        "="
+      ],
+      "commands": [
+        "workbench.action.navigateForward"
+      ],
       "silent": true
     },
     {
-      "before": ["leader", "leader", "c"],
-      "commands": ["extension.changeCase.commands"],
+      "before": [
+        "leader",
+        "leader",
+        "c"
+      ],
+      "commands": [
+        "extension.changeCase.commands"
+      ],
       "silent": true
     },
     {
-      "before": ["leader", "f"],
-      "commands": ["editor.action.formatDocument"],
+      "before": [
+        "leader",
+        "f"
+      ],
+      "commands": [
+        "editor.action.formatDocument"
+      ],
       "silent": true
     },
     {
-      "before": ["leader", "5"],
-      "commands": ["editor.emmet.action.matchTag"],
+      "before": [
+        "leader",
+        "5"
+      ],
+      "commands": [
+        "editor.emmet.action.matchTag"
+      ],
       "silent": true
     },
     {
-      "before": ["<C-u>"],
-      "commands": ["cursorPageUp"],
+      "before": [
+        "<C-u>"
+      ],
+      "commands": [
+        "cursorPageUp"
+      ],
       "silent": true
     },
     {
-      "before": ["/"],
-      "commands": ["actions.find"],
+      "before": [
+        "/"
+      ],
+      "commands": [
+        "actions.find"
+      ],
       "silent": true
     },
     {
-      "before": ["?"],
-      "commands": ["editor.action.startFindReplaceAction"],
+      "before": [
+        "R"
+      ],
+      "commands": [
+        "editor.action.startFindReplaceAction"
+      ],
       "silent": true
     },
     {
-      "before": [":"],
-      "commands": ["workbench.action.showCommands"],
+      "before": [
+        "<C-d>"
+      ],
+      "commands": [
+        "cursorPageDown"
+      ],
       "silent": true
     },
     {
-      "before": ["R"],
-      "commands": ["editor.action.startFindReplaceAction"],
+      "before": [
+        "<C-h>"
+      ],
+      "commands": [
+        "workbench.action.previousEditor"
+      ],
       "silent": true
     },
     {
-      "before": ["<C-d>"],
-      "commands": ["cursorPageDown"],
+      "before": [
+        "<C-l>"
+      ],
+      "commands": [
+        "workbench.action.nextEditor"
+      ],
       "silent": true
     },
     {
-      "before": ["<C-h>"],
-      "commands": ["workbench.action.previousEditor"],
+      "before": [
+        "leader",
+        "h"
+      ],
+      "commands": [
+        "workbench.action.navigateLeft"
+      ],
       "silent": true
     },
     {
-      "before": ["<C-l>"],
-      "commands": ["workbench.action.nextEditor"],
+      "before": [
+        "leader",
+        "l"
+      ],
+      "commands": [
+        "workbench.action.navigateRight"
+      ],
       "silent": true
     },
     {
-      "before": ["leader", "h"],
-      "commands": ["workbench.action.navigateLeft"],
+      "after": [
+        "*"
+      ],
+      "before": [
+        "#"
+      ]
+    },
+    {
+      "after": [
+        "#"
+      ],
+      "before": [
+        "*"
+      ]
+    },
+    {
+      "after": [
+        "J"
+      ],
+      "before": [
+        "leader",
+        "j"
+      ]
+    },
+    {
+      "after": [
+        "5",
+        "j"
+      ],
+      "before": [
+        "J"
+      ]
+    },
+    {
+      "after": [
+        "5",
+        "k"
+      ],
+      "before": [
+        "K"
+      ]
+    },
+    {
+      "after": [
+        "leader",
+        "leader",
+        "s"
+      ],
+      "before": [
+        "f"
+      ]
+    },
+    {
+      "before": [
+        "leader",
+        "k"
+      ],
+      "commands": [
+        "editor.action.insertLineBefore"
+      ],
       "silent": true
     },
     {
-      "before": ["leader", "l"],
-      "commands": ["workbench.action.navigateRight"],
+      "before": [
+        "leader",
+        "s"
+      ],
+      "commands": [
+        "workbench.action.files.save"
+      ],
       "silent": true
     },
     {
-      "after": ["*"],
-      "before": ["#"]
-    },
-    {
-      "after": ["#"],
-      "before": ["*"]
-    },
-    {
-      "after": ["J"],
-      "before": ["leader", "j"]
-    },
-    {
-      "after": ["5", "j"],
-      "before": ["J"]
-    },
-    {
-      "after": ["5", "k"],
-      "before": ["K"]
-    },
-    {
-      "after": ["leader", "leader", "s"],
-      "before": ["f"]
-    },
-    {
-      "before": ["leader", "k"],
-      "commands": ["editor.action.insertLineBefore"],
+      "before": [
+        "m"
+      ],
+      "commands": [
+        "bookmarks.toggle"
+      ],
       "silent": true
     },
     {
-      "before": ["leader", "s"],
-      "commands": ["workbench.action.files.save"],
+      "before": [
+        "'"
+      ],
+      "commands": [
+        "bookmarks.list"
+      ],
       "silent": true
     },
     {
-      "before": ["m"],
-      "commands": ["bookmarks.toggle"],
-      "silent": true
+      "after": [
+        "^"
+      ],
+      "before": [
+        "H"
+      ]
     },
     {
-      "before": ["'"],
-      "commands": ["bookmarks.list"],
-      "silent": true
+      "after": [
+        ""
+      ],
+      "before": [
+        "U"
+      ]
     },
     {
-      "after": ["^"],
-      "before": ["H"]
+      "after": [
+        "\"",
+        "_",
+        "d"
+      ],
+      "before": [
+        "d"
+      ]
     },
     {
-      "after": [""],
-      "before": ["U"]
+      "after": [
+        "d"
+      ],
+      "before": [
+        "\\",
+        "d"
+      ]
     },
     {
-      "after": ["\"", "_", "d"],
-      "before": ["d"]
+      "after": [
+        "\"",
+        "_",
+        "x"
+      ],
+      "before": [
+        "x"
+      ]
     },
     {
-      "after": ["d"],
-      "before": ["\\", "d"]
+      "after": [
+        "x"
+      ],
+      "before": [
+        "\\",
+        "x"
+      ]
     },
     {
-      "after": ["\"", "_", "x"],
-      "before": ["x"]
+      "after": [
+        "\"",
+        "_",
+        "c"
+      ],
+      "before": [
+        "c"
+      ]
     },
     {
-      "after": ["x"],
-      "before": ["\\", "x"]
+      "after": [
+        "c"
+      ],
+      "before": [
+        "\\",
+        "c"
+      ]
     },
     {
-      "after": ["\"", "_", "c"],
-      "before": ["c"]
+      "after": [
+        "\"",
+        "_",
+        "C"
+      ],
+      "before": [
+        "C"
+      ]
     },
     {
-      "after": ["c"],
-      "before": ["\\", "c"]
+      "after": [
+        "C"
+      ],
+      "before": [
+        "\\",
+        "C"
+      ]
     },
     {
-      "after": ["\"", "_", "C"],
-      "before": ["C"]
+      "after": [
+        "\"",
+        "_",
+        "S"
+      ],
+      "before": [
+        "S"
+      ]
     },
     {
-      "after": ["C"],
-      "before": ["\\", "C"]
+      "after": [
+        "S"
+      ],
+      "before": [
+        "\\",
+        "S"
+      ]
     },
     {
-      "after": ["\"", "_", "S"],
-      "before": ["S"]
+      "after": [
+        "\"",
+        "_",
+        "D"
+      ],
+      "before": [
+        "D"
+      ]
     },
     {
-      "after": ["S"],
-      "before": ["\\", "S"]
+      "after": [
+        "D"
+      ],
+      "before": [
+        "\\",
+        "D"
+      ]
     },
     {
-      "after": ["\"", "_", "D"],
-      "before": ["D"]
+      "after": [
+        "\"",
+        "_",
+        "s"
+      ],
+      "before": [
+        "s"
+      ]
     },
     {
-      "after": ["D"],
-      "before": ["\\", "D"]
+      "after": [
+        "s"
+      ],
+      "before": [
+        "\\",
+        "s"
+      ]
     },
     {
-      "after": ["\"", "_", "s"],
-      "before": ["s"]
-    },
-    {
-      "after": ["s"],
-      "before": ["\\", "s"]
-    },
-    {
-      "after": ["g", "_"],
-      "before": ["L"]
+      "after": [
+        "g",
+        "_"
+      ],
+      "before": [
+        "L"
+      ]
     }
   ],
   "vim.operatorPendingModeKeyBindings": [
     {
-      "after": ["^"],
-      "before": ["H"]
+      "after": [
+        "^"
+      ],
+      "before": [
+        "H"
+      ]
     },
     {
-      "after": ["g", "_"],
-      "before": ["L"]
+      "after": [
+        "g",
+        "_"
+      ],
+      "before": [
+        "L"
+      ]
     },
     {
-      "after": ["a", "I"],
-      "before": ["a", "i"]
+      "after": [
+        "a",
+        "I"
+      ],
+      "before": [
+        "a",
+        "i"
+      ]
     },
     {
-      "after": ["i", "w"],
-      "before": ["w"]
+      "after": [
+        "i",
+        "w"
+      ],
+      "before": [
+        "w"
+      ]
     },
     {
-      "after": ["i", "'"],
-      "before": ["'"]
+      "after": [
+        "i",
+        "'"
+      ],
+      "before": [
+        "'"
+      ]
     },
     {
-      "after": ["i", "q"],
-      "before": ["q"]
+      "after": [
+        "i",
+        "q"
+      ],
+      "before": [
+        "q"
+      ]
     },
     {
-      "after": ["i", "["],
-      "before": ["["]
+      "after": [
+        "i",
+        "["
+      ],
+      "before": [
+        "["
+      ]
     },
     {
-      "after": ["i", "]"],
-      "before": ["]"]
+      "after": [
+        "i",
+        "]"
+      ],
+      "before": [
+        "]"
+      ]
     },
     {
-      "after": ["i", "{"],
-      "before": ["{"]
+      "after": [
+        "i",
+        "{"
+      ],
+      "before": [
+        "{"
+      ]
     },
     {
-      "after": ["i", "}"],
-      "before": ["}"]
+      "after": [
+        "i",
+        "}"
+      ],
+      "before": [
+        "}"
+      ]
     }
   ],
   "vim.useCtrlKeys": true,
   "vim.useSystemClipboard": true,
   "vim.visualModeKeyBindingsNonRecursive": [
     {
-      "after": ["leader", "leader", "s"],
-      "before": ["f"]
+      "after": [
+        "leader",
+        "leader",
+        "s"
+      ],
+      "before": [
+        "f"
+      ]
     },
     {
-      "after": ["<Esc>", "*"],
-      "before": ["#"]
+      "after": [
+        "<Esc>",
+        "*"
+      ],
+      "before": [
+        "#"
+      ]
     },
     {
-      "after": ["<Esc>", "#"],
-      "before": ["*"]
+      "after": [
+        "<Esc>",
+        "#"
+      ],
+      "before": [
+        "*"
+      ]
     },
     {
-      "before": ["<C-f>"],
-      "commands": ["actions.find"],
+      "before": [
+        "<C-f>"
+      ],
+      "commands": [
+        "actions.find"
+      ],
       "silent": true
     },
     {
-      "after": ["5", "j"],
-      "before": ["J"]
+      "after": [
+        "5",
+        "j"
+      ],
+      "before": [
+        "J"
+      ]
     },
     {
-      "after": ["5", "k"],
-      "before": ["K"]
+      "after": [
+        "5",
+        "k"
+      ],
+      "before": [
+        "K"
+      ]
     },
     {
-      "before": ["/"],
-      "commands": ["actions.find"],
+      "before": [
+        "/"
+      ],
+      "commands": [
+        "actions.find"
+      ],
       "silent": true
     },
     {
-      "before": ["?"],
-      "commands": ["editor.action.startFindReplaceAction"],
+      "before": [
+        "R"
+      ],
+      "commands": [
+        "editor.action.startFindReplaceAction"
+      ],
       "silent": true
     },
     {
-      "before": [":"],
-      "commands": ["workbench.action.showCommands"],
+      "before": [
+        "<C-b>"
+      ],
+      "commands": [
+        "workbench.action.toggleSidebarVisibility"
+      ],
       "silent": true
     },
     {
-      "before": ["R"],
-      "commands": ["editor.action.startFindReplaceAction"],
+      "before": [
+        "leader",
+        "leader",
+        "c"
+      ],
+      "commands": [
+        "extension.changeCase.commands"
+      ],
       "silent": true
     },
     {
-      "before": ["<C-b>"],
-      "commands": ["workbench.action.toggleSidebarVisibility"],
+      "before": [
+        "+"
+      ],
+      "commands": [
+        "editor.action.moveLinesUpAction"
+      ],
       "silent": true
     },
     {
-      "before": ["leader", "leader", "c"],
-      "commands": ["extension.changeCase.commands"],
+      "before": [
+        "_"
+      ],
+      "commands": [
+        "editor.action.moveLinesDownAction"
+      ],
       "silent": true
     },
     {
-      "before": ["+"],
-      "commands": ["editor.action.moveLinesUpAction"],
+      "after": [
+        "\"",
+        "_",
+        "d"
+      ],
+      "before": [
+        "d"
+      ]
+    },
+    {
+      "after": [
+        "d"
+      ],
+      "before": [
+        "\\",
+        "d"
+      ]
+    },
+    {
+      "after": [
+        "\"",
+        "_",
+        "c"
+      ],
+      "before": [
+        "c"
+      ]
+    },
+    {
+      "after": [
+        "x"
+      ],
+      "before": [
+        "\\",
+        "x"
+      ]
+    },
+    {
+      "after": [
+        "c"
+      ],
+      "before": [
+        "\\",
+        "c"
+      ]
+    },
+    {
+      "after": [
+        "\"",
+        "_",
+        "s"
+      ],
+      "before": [
+        "s"
+      ]
+    },
+    {
+      "after": [
+        "\"",
+        "_",
+        "x"
+      ],
+      "before": [
+        "x"
+      ]
+    },
+    {
+      "after": [
+        "s"
+      ],
+      "before": [
+        "\\",
+        "s"
+      ]
+    },
+    {
+      "after": [
+        "^"
+      ],
+      "before": [
+        "H"
+      ]
+    },
+    {
+      "after": [
+        "g",
+        "_"
+      ],
+      "before": [
+        "L"
+      ]
+    },
+    {
+      "after": [
+        "a",
+        "I"
+      ],
+      "before": [
+        "a",
+        "i"
+      ]
+    },
+    {
+      "before": [
+        "i",
+        "t"
+      ],
+      "commands": [
+        "editor.emmet.action.balanceIn"
+      ],
       "silent": true
     },
     {
-      "before": ["_"],
-      "commands": ["editor.action.moveLinesDownAction"],
-      "silent": true
+      "after": [
+        "i",
+        "w"
+      ],
+      "before": [
+        "w"
+      ]
     },
     {
-      "after": ["\"", "_", "d"],
-      "before": ["d"]
+      "after": [
+        "i",
+        "'"
+      ],
+      "before": [
+        "'"
+      ]
     },
     {
-      "after": ["d"],
-      "before": ["\\", "d"]
+      "after": [
+        "i",
+        "q"
+      ],
+      "before": [
+        "q"
+      ]
     },
     {
-      "after": ["\"", "_", "c"],
-      "before": ["c"]
+      "after": [
+        "i",
+        "["
+      ],
+      "before": [
+        "["
+      ]
     },
     {
-      "after": ["x"],
-      "before": ["\\", "x"]
+      "after": [
+        "i",
+        "]"
+      ],
+      "before": [
+        "]"
+      ]
     },
     {
-      "after": ["c"],
-      "before": ["\\", "c"]
+      "after": [
+        "i",
+        "{"
+      ],
+      "before": [
+        "{"
+      ]
     },
     {
-      "after": ["\"", "_", "s"],
-      "before": ["s"]
-    },
-    {
-      "after": ["\"", "_", "x"],
-      "before": ["x"]
-    },
-    {
-      "after": ["s"],
-      "before": ["\\", "s"]
-    },
-    {
-      "after": ["^"],
-      "before": ["H"]
-    },
-    {
-      "after": ["g", "_"],
-      "before": ["L"]
-    },
-    {
-      "after": ["a", "I"],
-      "before": ["a", "i"]
-    },
-    {
-      "before": ["i", "t"],
-      "commands": ["editor.emmet.action.balanceIn"],
-      "silent": true
-    },
-    {
-      "after": ["i", "w"],
-      "before": ["w"]
-    },
-    {
-      "after": ["i", "'"],
-      "before": ["'"]
-    },
-    {
-      "after": ["i", "q"],
-      "before": ["q"]
-    },
-    {
-      "after": ["i", "["],
-      "before": ["["]
-    },
-    {
-      "after": ["i", "]"],
-      "before": ["]"]
-    },
-    {
-      "after": ["i", "{"],
-      "before": ["{"]
-    },
-    {
-      "after": ["i", "}"],
-      "before": ["}"]
+      "after": [
+        "i",
+        "}"
+      ],
+      "before": [
+        "}"
+      ]
     }
   ],
+  "volar.takeOverMode.extension": "",
   "vue.codeLens.enabled": false,
   "vue.complete.casing.props": "autoCamel",
   "vue.inlayHints.missingProps": true,
@@ -580,13 +1010,12 @@
   "workbench.colorTheme": "Moegi Dark",
   "workbench.editor.empty.hint": "hidden",
   "workbench.editor.highlightModifiedTabs": true,
-  "workbench.iconTheme": "icons",
+  "workbench.iconTheme": "catppuccin-mocha",
   "workbench.layoutControl.enabled": false,
   "workbench.list.smoothScrolling": true,
   "workbench.sideBar.location": "right",
   "workbench.startupEditor": "none",
   "workbench.tree.indent": 30,
   "workbench.tree.renderIndentGuides": "always",
-  "html.autoClosingTags": false,
-  "workbench.tree.enableStickyScroll": true
+  "editor.stickyScroll.maxLineCount": 1
 }

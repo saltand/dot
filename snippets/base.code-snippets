@@ -1,9 +1,4 @@
 {
-  "引入": {
-    "scope": "typescript,typescriptreact,javascript,javascriptreact",
-    "prefix": "im",
-    "body": ["import $2 from '$1'"]
-  },
   "打印": {
     "scope": "typescript,typescriptreact,javascript,javascriptreact",
     "prefix": "csl",
@@ -19,8 +14,8 @@
   "jsd": {
     "scope": "typescript,typescriptreact,javascript,javascriptreact",
     "prefix": "jsd",
-    "body": ["/** @description $1 */"],
-    "description": "jsdoc description"
+    "body": ["/** $1 */"],
+    "description": "jsdoc"
   },
   "箭头函数": {
     "scope": "typescript,typescriptreact,javascript,javascriptreact",
@@ -33,18 +28,6 @@
     "prefix": "pene",
     "body": ["process.env.NODE_ENV === 'development'"],
     "description": "开发环境"
-  },
-  "v-for-item-index": {
-    "scope": "vue-html",
-    "prefix": "vfii",
-    "body": ["v-for=\"(item,index) in $1\" :key=\"index\""],
-    "description": "v-for-item-index"
-  },
-  "v-for-item": {
-    "scope": "vue-html",
-    "prefix": "vfi",
-    "body": ["v-for=\"item in $1\""],
-    "description": "v-for-item"
   },
   "export default": {
     "scope": "typescript,typescriptreact,javascript,javascriptreact",
@@ -71,16 +54,19 @@
     "description": "export const"
   },
   "Vue Data": {
+    "scope": "typescript,javascript",
     "prefix": "vdata",
-    "body": ["data() {", "\treturn {", "\t\t${1}: ${2}", "\t}", "},"],
+    "body": ["data() {", "\treturn {", "\t\t${1}", "\t}", "},"],
     "description": "Vue Component Data"
   },
   "Vue Methods": {
+    "scope": "typescript,javascript",
     "prefix": "vmethod",
     "body": ["methods: {", "\t${1:name}() {", "\t\t${0}", "\t}", "},"],
     "description": "vue method"
   },
   "Vue Computed": {
+    "scope": "typescript,javascript",
     "prefix": "vcomputed",
     "body": [
       "computed: {",
@@ -92,40 +78,59 @@
     "description": "computed value"
   },
   "Vue Lifecycle beforeCreate": {
+    "scope": "typescript,javascript",
     "prefix": "vbeforecreate",
-    "body": ["beforeCreate () {", "\t${0};", "},"],
+    "body": ["beforeCreate () {", "\t${0}", "},"],
     "description": "beforeCreate lifecycle method"
   },
   "Vue Lifecycle created": {
+    "scope": "typescript,javascript",
     "prefix": "vcreated",
-    "body": ["created () {", "\t${0};", "},"],
+    "body": ["created () {", "\t${0}", "},"],
     "description": "created lifecycle method"
   },
   "Vue Lifecycle beforeMount": {
+    "scope": "typescript,javascript",
     "prefix": "vbeforemount",
-    "body": ["beforeMount () {", "\t${0};", "},"],
+    "body": ["beforeMount () {", "\t${0}", "},"],
     "description": "beforeMount lifecycle method"
   },
   "Vue Lifecycle mounted": {
+    "scope": "typescript,javascript",
     "prefix": "vmounted",
-    "body": ["mounted () {", "\t${0};", "},"],
+    "body": ["mounted () {", "\t${0}", "},"],
     "description": "mounted lifecycle method"
   },
   "Vue Lifecycle beforeDestroy": {
+    "scope": "typescript,javascript",
     "prefix": "vbeforedestroy",
-    "body": ["beforeDestroy () {", "\t${0};", "},"],
+    "body": ["beforeDestroy () {", "\t${0}", "},"],
     "description": "beforeDestroy lifecycle method"
   },
   "Vue Lifecycle destroyed": {
+    "scope": "typescript,javascript",
     "prefix": "vdestroyed",
-    "body": ["destroyed () {", "\t${0};", "},"],
+    "body": ["destroyed () {", "\t${0}", "},"],
     "description": "destroyed lifecycle method"
   },
+  "Vue Lifecycle activated": {
+    "scope": "typescript,javascript",
+    "prefix": "vactivated",
+    "body": ["activated () {", "\t${0}", "},"],
+    "description": "activated lifecycle method"
+  },
+  "Vue Lifecycle deactivated": {
+    "scope": "typescript,javascript",
+    "prefix": "vdeactivated",
+    "body": ["deactivated () {", "\t${0}", "},"],
+    "description": "deactivated lifecycle method"
+  },
   "Vue Watchers": {
+    "scope": "typescript,javascript",
     "prefix": "vwatcher",
     "body": [
       "watch: {",
-      "\t${1:data}(${2:newValue}, ${3:oldValue}) {",
+      "\t${1:data}(${2:val}) {",
       "\t\t${0}",
       "\t}",
       "},"
@@ -133,6 +138,7 @@
     "description": "vue watcher"
   },
   "Vue Watchers with Options": {
+    "scope": "typescript,javascript",
     "prefix": "vwatcher-options",
     "body": [
       "watch: {",
@@ -148,6 +154,7 @@
     "description": "vue watcher with options"
   },
   "Vue Props with Default": {
+    "scope": "typescript,javascript",
     "prefix": "vprops",
     "body": [
       "props: {",
@@ -160,46 +167,55 @@
     "description": "Vue Props with Default"
   },
   "Vue Import into the Component": {
+    "scope": "typescript,javascript",
     "prefix": "vcomponents",
     "body": ["components: {", "\t${1:New},", "},"],
     "description": "Import one component into another, within export statement"
   },
   "Vue Composition API - Reactive": {
+    "scope": "typescript,javascript",
     "prefix": "v3reactive",
     "body": ["const ${1:name} = reactive({", "\t${2:count}: ${3:0}", "})"],
     "description": "Vue Composition api - reactive"
   },
   "Vue Composition API - Computed": {
+    "scope": "typescript,javascript",
     "prefix": "v3computed",
     "body": ["const ${1:name} = computed(() => {", "\treturn ${2}", "})"],
     "description": "Vue Composition api - computed"
   },
   "Vue Composition API - watch - single source": {
+    "scope": "typescript,javascript",
     "prefix": "v3watch",
     "body": ["watch(() => ${1:foo}, (newValue, oldValue) => {", "\t${2}", "})"],
     "description": "Vue Composition api - watcher single source"
   },
   "Vue Composition API - Vue ref": {
+    "scope": "typescript,javascript",
     "prefix": "v3ref",
     "body": ["const ${1:name} = ref(${2:initialValue})"],
     "description": "Vue Ref"
   },
   "Vue Lifecycle Hooks - onMounted": {
+    "scope": "typescript,javascript",
     "prefix": "v3onmounted",
     "body": ["onMounted(() => {${1}})"],
     "description": "Vue Mounted Lifecycle hook"
   },
   "Vue Lifecycle Hooks - onBeforeMount": {
+    "scope": "typescript,javascript",
     "prefix": "v3onbeforemount",
     "body": ["onBeforeMount(() => {${1}})"],
     "description": "Vue onBeforeMount Lifecycle hook"
   },
   "Vue Lifecycle Hooks - onUnmounted": {
+    "scope": "typescript,javascript",
     "prefix": "v3onunmounted",
     "body": ["onUnmounted(() => {${1}})"],
     "description": "(destroyed) Vue onUnmounted Lifecycle hook"
   },
   "Vue Lifecycle Hooks - onBeforeUnmount": {
+    "scope": "typescript,javascript",
     "prefix": "v3onbeforeunmount",
     "body": ["onBeforeUnmount(() => {${1}})"],
     "description": "(beforeDestroy) Vue onBeforeUnmount Lifecycle hook"

@@ -20,50 +20,8 @@
     ],
     "description": "Base for Vue File"
   },
-  "Vue Single File Component with SASS": {
-    "prefix": "vbase-sass",
-    "body": [
-      "<template>",
-      "\t<div>",
-      "",
-      "\t</div>",
-      "</template>",
-      "",
-      "<script>",
-      "\texport default {",
-      "\t\t${0}",
-      "\t}",
-      "</script>",
-      "",
-      "<style lang=\"sass\" scoped>",
-      "",
-      "</style>"
-    ],
-    "description": "Base for Vue File with SASS"
-  },
-  "Vue Single File Component with CSS": {
-    "prefix": "vbase-css",
-    "body": [
-      "<template>",
-      "\t<div>",
-      "",
-      "\t</div>",
-      "</template>",
-      "",
-      "<script>",
-      "\texport default {",
-      "\t\t${0}",
-      "\t}",
-      "</script>",
-      "",
-      "<style lang=\"css\" scoped>",
-      "",
-      "</style>"
-    ],
-    "description": "Base for Vue File with CSS"
-  },
   "Vue Single File Component Composition API": {
-    "prefix": "vbase-3",
+    "prefix": "v3base",
     "body": [
       "<template>",
       "\t<div>",
@@ -81,48 +39,45 @@
       "}",
       "</script>",
       "",
-      "<style lang=\"scss\" scoped>",
+      "<style lang=\"less\" scoped>",
       "",
       "</style>"
     ],
     "description": "Base for Vue File Composition API with SCSS"
   },
   "Vue Single File Component Setup Composition API": {
-    "prefix": "vbase-3-setup",
+    "prefix": "v3base-setup",
     "body": [
       "<template>",
-      "\t<div>",
-      "",
-      "\t</div>",
+      "$0",
       "</template>",
       "",
       "<script setup>",
       "",
       "</script>",
       "",
-      "<style lang=\"$0\" scoped>",
+      "<style lang=\"less\" scoped>",
       "",
       "</style>"
     ],
     "description": "Base for Vue File Setup Composition API"
   },
   "Vue Single File Component Setup Composition API with Typescript": {
-    "prefix": "vbase-3-ts",
+    "prefix": "v3base-ts",
     "body": [
       "<template>",
-      "\t<div>",
-      "",
-      "\t</div>",
+      "$0",
       "</template>",
       "",
       "<script setup lang=\"ts\">",
       "",
       "</script>",
       "",
-      "<style scoped>",
+      "<style lang=\"less\" scoped>",
       "",
       "</style>"
     ],
     "description": "Base for Vue File Setup Composition API - Typescript"
   },
+
 }
